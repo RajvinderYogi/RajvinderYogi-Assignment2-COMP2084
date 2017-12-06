@@ -1,0 +1,54 @@
+﻿@model IEnumerable<RajvinderYogi_Assignment1_COMP2084.Models.CarDetail>
+
+@{
+    ViewBag.Title = "Inventory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Inventory</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Brand
+        </th>
+        <th>
+            Model
+        </th>
+        <th>
+            Year
+        </th>
+        <th>
+            Action Links
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClassicCar.CarName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CarBrand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CarModel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CarYear)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DetailsId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DetailsId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DetailsId })
+        </td>
+    </tr>
+}
+
+</table>

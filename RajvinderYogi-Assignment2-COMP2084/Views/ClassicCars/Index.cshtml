@@ -1,0 +1,48 @@
+﻿@model IEnumerable<RajvinderYogi_Assignment1_COMP2084.Models.ClassicCar>
+
+@{
+    ViewBag.Title = "Cars";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Cars</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Car Name
+        </th>
+        <th>
+            Make Year
+        </th>
+        <th>
+            Country
+        </th>
+        <th>
+            Action Links
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CarName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MakeYear)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CarId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CarId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CarId })
+        </td>
+    </tr>
+}
+
+</table>
