@@ -10,8 +10,9 @@ using RajvinderYogi_Assignment1_COMP2084.Models;
 
 namespace RajvinderYogi_Assignment1_COMP2084.Controllers
 {
+
     public class CarDetailsController : Controller
-    {
+    {   
         private VintageCarsModel db = new VintageCarsModel();
 
         // GET: CarDetails
@@ -35,7 +36,7 @@ namespace RajvinderYogi_Assignment1_COMP2084.Controllers
             }
             return View(carDetail);
         }
-
+        [Authorize]
         // GET: CarDetails/Create
         public ActionResult Create()
         {
@@ -60,7 +61,7 @@ namespace RajvinderYogi_Assignment1_COMP2084.Controllers
             ViewBag.CarId = new SelectList(db.ClassicCars, "CarId", "CarName", carDetail.CarId);
             return View(carDetail);
         }
-
+        [Authorize]
         // GET: CarDetails/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -93,7 +94,7 @@ namespace RajvinderYogi_Assignment1_COMP2084.Controllers
             ViewBag.CarId = new SelectList(db.ClassicCars, "CarId", "CarName", carDetail.CarId);
             return View(carDetail);
         }
-
+        [Authorize]
         // GET: CarDetails/Delete/5
         public ActionResult Delete(int? id)
         {

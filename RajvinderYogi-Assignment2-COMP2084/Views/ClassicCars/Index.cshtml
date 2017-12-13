@@ -6,10 +6,11 @@
 }
 
 <h2>Cars</h2>
-
+@if (User.Identity.IsAuthenticated) { 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+}
 <table class="table">
     <tr>
         <th>
@@ -38,9 +39,13 @@
             @Html.DisplayFor(modelItem => item.Country)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CarId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CarId }) |
+            @if (User.Identity.IsAuthenticated) {
+            @Html.ActionLink("Edit", "Edit", new { id = item.CarId })
+            }
+            @Html.ActionLink("Details", "Details", new { id=item.CarId })
+            @if(User.Identity.IsAuthenticated) { 
             @Html.ActionLink("Delete", "Delete", new { id=item.CarId })
+            }
         </td>
     </tr>
 }
