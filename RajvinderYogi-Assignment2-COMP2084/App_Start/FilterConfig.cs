@@ -8,6 +8,9 @@ namespace RajvinderYogi_Assignment2_COMP2084
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+
+            // add SSL
+            filters.Add(new RequireHttpsAttribute());
         }
     }
 }
