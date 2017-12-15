@@ -8,6 +8,7 @@ using Owin;
 using RajvinderYogi_Assignment2_COMP2084.Models;
 using System.Configuration;
 using Microsoft.Owin.Security.Provider;
+using Owin.Security.Providers.LinkedIn;
 
 namespace RajvinderYogi_Assignment2_COMP2084
 {
@@ -51,7 +52,9 @@ namespace RajvinderYogi_Assignment2_COMP2084
             app.UseMicrosoftAccountAuthentication(
                 clientId: ConfigurationManager.AppSettings["MicrosoftClientId"],
                 clientSecret: ConfigurationManager.AppSettings["MicrosoftClientSecret"]);
-
+            app.UseLinkedInAuthentication(
+                clientId: ConfigurationManager.AppSettings["LinkedInClientId"],
+                clientSecret: ConfigurationManager.AppSettings["LinkedInClientSecret"]);
             app.UseTwitterAuthentication(
                consumerKey: ConfigurationManager.AppSettings["consumerKey"],
                consumerSecret: ConfigurationManager.AppSettings["consumerSecret"]);
