@@ -7,6 +7,7 @@ using Microsoft.Owin.Security.Google;
 using Owin;
 using RajvinderYogi_Assignment2_COMP2084.Models;
 using System.Configuration;
+using Microsoft.Owin.Security.Provider;
 
 namespace RajvinderYogi_Assignment2_COMP2084
 {
@@ -51,9 +52,9 @@ namespace RajvinderYogi_Assignment2_COMP2084
                 clientId: ConfigurationManager.AppSettings["MicrosoftClientId"],
                 clientSecret: ConfigurationManager.AppSettings["MicrosoftClientSecret"]);
 
-            //app.UseTwitterAuthentication(
-            //   consumerKey: "",
-            //   consumerSecret: "");
+            app.UseTwitterAuthentication(
+               consumerKey: ConfigurationManager.AppSettings["consumerKey"],
+               consumerSecret: ConfigurationManager.AppSettings["consumerSecret"]);
 
             app.UseFacebookAuthentication(
                appId: ConfigurationManager.AppSettings["FacebookAppId"],
