@@ -223,7 +223,9 @@
     <Compile Include="Models\CarDetail.cs" />
     <Compile Include="Models\ClassicCar.cs" />
     <Compile Include="Models\ClassicCarModel.cs" />
+    <Compile Include="Models\EFClassicCarsRepository.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\InterfaceClassicCarsRepository.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\sysdiagram.cs" />
     <Compile Include="Models\VintageCarsModel.cs" />
