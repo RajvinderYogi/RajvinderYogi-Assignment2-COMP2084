@@ -1,4 +1,4 @@
-﻿<h1> CLassic Car website - Assignment 2</h1>
+<h1> CLassic Car website - Assignment 2</h1>
 <h3> This website is built for Assignment-1 and Assignment-2. (Server Side Scripting COMP 2084) at Georgian College</h3>
 <p> I have extended my<a href="http://rajvinderyogi-assignment1-comp2084.azurewebsites.net/"> Assignment1 - COMP2084 - RajVinder Yogi</a> in to Assignment-2</p>
 <p>Please click this link to visit the website <a href="https://rajvinderyogi-assignment2-comp2084.azurewebsites.net/"> Assignment2 - COMP2084 - RajVinder Yogi</a>. You will some instruction about how to use the website.</p>
