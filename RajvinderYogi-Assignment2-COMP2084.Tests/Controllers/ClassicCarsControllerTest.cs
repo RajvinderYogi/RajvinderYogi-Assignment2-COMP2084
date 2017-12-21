@@ -77,7 +77,7 @@ namespace RajvinderYogi_Assignment2_COMP2084.Tests.Controllers
             var act = (ClassicCar)cont.Details(3).Model;
 
             //Assert
-            Assert.AreEqual(classiccars.ToList()[0], act);
+            Assert.AreEqual(classiccars.ToList()[2], act);
         }
         //test method to check invalid id
         [TestMethod]
