@@ -30,7 +30,9 @@ namespace RajvinderYogi_Assignment2_COMP2084.Tests.Controllers
             {
                 new ClassicCar {CarId = 1, CarName = "One Car", Country="One Country", MakeYear=1990 },
                 new ClassicCar {CarId = 2, CarName = "Two Car", Country="Two Country", MakeYear=1991 },
-                new ClassicCar {CarId = 3, CarName = "Three Car", Country="Three Country", MakeYear=1992 }
+                new ClassicCar {CarId = 3, CarName = "Three Car", Country="Three Country", MakeYear=1992 },
+                new ClassicCar {CarId = 4, CarName = "Four Car", Country="Four Country", MakeYear=1993 },
+                new ClassicCar {CarId = 5, CarName = "Five Car", Country="Five Country", MakeYear=1994 }
             };
             //add data to mock object
             moc.Setup(m => m.ClassicCars).Returns(classiccars.AsQueryable());
@@ -46,8 +48,8 @@ namespace RajvinderYogi_Assignment2_COMP2084.Tests.Controllers
             //Assert
             Assert.IsNotNull(results);
         }
-       [TestMethod]
-       public void IndexLoadsData()
+        [TestMethod]
+        public void IndexLoadsData()
         {
             //Act
             var act = (List<ClassicCar>)cont.Index().Model;
@@ -72,7 +74,7 @@ namespace RajvinderYogi_Assignment2_COMP2084.Tests.Controllers
         public void DetailsValidId()
         {
             //Act
-            var act = (ClassicCar)cont.Details(1).Model;
+            var act = (ClassicCar)cont.Details(3).Model;
 
             //Assert
             Assert.AreEqual(classiccars.ToList()[0], act);
@@ -104,7 +106,7 @@ namespace RajvinderYogi_Assignment2_COMP2084.Tests.Controllers
         public void DeleteConfirmValidId()
         {
             //Act
-            ViewResult act = cont.DeleteConfirmed(1);
+            ViewResult act = cont.DeleteConfirmed(3);
 
             //Assert
             Assert.AreEqual("Index", act.ViewName);
