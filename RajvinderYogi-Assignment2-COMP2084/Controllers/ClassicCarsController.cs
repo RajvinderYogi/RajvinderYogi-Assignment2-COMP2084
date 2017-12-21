@@ -28,25 +28,25 @@ namespace RajvinderYogi_Assignment1_COMP2084.Controllers
         }
 
         // GET: ClassicCars
-        public ActionResult Index()
+        public ViewResult Index()
         {
             return View(db.ClassicCars.ToList());
         }
 
-        //// GET: ClassicCars/Details/5
-        //public ActionResult Details(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    ClassicCar classicCar = db.ClassicCars.Find(id);
-        //    if (classicCar == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(classicCar);
-        //}
+        // GET: ClassicCars/Details/5
+        public ViewResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return View("Error");
+            }
+            ClassicCar classicCar = db.ClassicCars.FirstOrDefault(c => c.CarId ==  id);
+            if (classicCar == null)
+            {
+                return View("Error");
+            }
+            return View(classicCar);
+        }
         //[Authorize]
         //// GET: ClassicCars/Create
         //public ActionResult Create()
@@ -118,16 +118,24 @@ namespace RajvinderYogi_Assignment1_COMP2084.Controllers
         //    return View(classicCar);
         //}
 
-        //// POST: ClassicCars/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DeleteConfirmed(int id)
-        //{
-        //    ClassicCar classicCar = db.ClassicCars.Find(id);
-        //    db.ClassicCars.Remove(classicCar);
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
+        // POST: ClassicCars/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ViewResult DeleteConfirmed(int? id)
+        {
+            if (id == null)
+            {
+                return View("Error");
+            }
+            ClassicCar classicCar = db.ClassicCars.FirstOrDefault(c => c.CarId
+             == id);
+            if (classicCar == null)
+            {
+                return View("Error");
+            }
+            db.Delete(classicCar);
+            return View("Index");
+        }
 
         //protected override void Dispose(bool disposing)
         //{

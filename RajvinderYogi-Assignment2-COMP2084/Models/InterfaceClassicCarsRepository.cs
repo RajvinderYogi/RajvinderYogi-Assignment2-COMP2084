@@ -11,7 +11,6 @@ namespace RajvinderYogi_Assignment1_COMP2084.Models
     public interface InterfaceClassicCarsRepository
     {
         IQueryable<ClassicCar> ClassicCars { get; }
-        IQueryable<CarDetail> CarDetails { get; }
        
         ClassicCar Save(ClassicCar classiccar);
         void Delete(ClassicCar classiccar);

@@ -12,14 +12,6 @@ namespace RajvinderYogi_Assignment1_COMP2084.Models
         // db connection
         VintageCarsModel db = new VintageCarsModel();
 
-        public IQueryable<CarDetail> CarDetails
-        {
-            get
-            {
-                return db.CarDetails;
-            }
-        }
-
         public IQueryable<ClassicCar> ClassicCars
         {
             get
