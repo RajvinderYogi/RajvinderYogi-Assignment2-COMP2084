@@ -7,6 +7,7 @@
 <strong>1. User can register his/her self and login.</strong> 
 <strong>2. Provided SSL certificate.</strong>
 <strong>3. Anonymus user can only read the data but can not create, edit and delete without logging in.</strong>
+<p> Added different unit test methods for Index, Details, DeleteConfirm </p>
 <strong>4. Provided the option for social logins. That are: Google, Facebook, Twitter, LinkedIn and Microsoft.</strong>
 <p>Here is the link to Bootswatch which is used to style the website <a href="https://bootswatch.com/united/"> Bootswatch - United </a></p>
 <p>This is the <a href="https://www.globalcarsbrands.com/top-20-old-classic-vintage-cars-for-men/">informational website </a>from where I have collected data fOR DB.</p>
